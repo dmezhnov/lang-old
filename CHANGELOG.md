@@ -1,10 +1,19 @@
 # Changelog
 
+## [0.4.4] - 2026-01-20
+
+### Added
+
+- **Zed Support**: Full support for Zed Editor with automated WASM builds and asset packaging.
+- **Documentation**: Standardized README, LICENSE, and Icons across all extensions.
+- **Build System**: Unified `mise build` command for building both VS Code and Zed extensions.
+- **Metadata Sync**: Automatic synchronization of version and description from root `package.json`.
+
 ## [0.4.3] - 2026-01-18
 
 ### Changed
 
-- **Build**: Migrated build system to run via `Bun`, using stable `esbuild` for bundling (resolved crash issues).
+- **Build**: Migrated build system to run via `Bun` as a task runner, but kept **esbuild** for bundling (Bun.build is currently incompatible with VS Code LSP).
 - **Packaging**: Fixed publish workflow to correctly attach VSIX assets and include the extension icon.
 - **LSP**: Added standalone language server binary `lang-language-server` usage in other editors.
 
@@ -13,7 +22,6 @@
 ### Changed
 
 - Failed release (build instability). Superseded by 0.4.3.
-
 
 ## [0.4.1] - 2026-01-18
 
@@ -74,9 +82,9 @@
 
 ### Fixed
 
-- **Grammar**: Fixed `Statement` rule to allow statements without explicit termination in certain contexts
-  (e.g., last statement in where blocks before closing braces). This resolves parsing issues with nested where
-  clauses in records.
+- **Grammar**: Fixed `Statement` rule to allow statements without explicit termination in certain
+  contexts (e.g., last statement in where blocks before closing braces). This resolves parsing
+  issues with nested where clauses in records.
 
 ## [0.3.10] - 2026-01-17
 
@@ -90,29 +98,31 @@
 
 ### Fixed
 
-- **Grammar**: Resolved parsing ambiguity between `Equation` and `ExprStatement`. This fixes errors where
-  expressions starting with an identifier (like `f of ...`) were incorrectly treated as failed equations.
+- **Grammar**: Resolved parsing ambiguity between `Equation` and `ExprStatement`. This fixes errors
+  where expressions starting with an identifier (like `f of ...`) were incorrectly treated as
+  failed equations.
 - **Grammar**: Updated `FunctionCall` and `List` to support ellipsis (`...`) in argument lists (e.g.,
   `func(a, ..., b)`) and anywhere in lists.
-- **Verification**: Verified `examples/correct syntax/list.lang` which includes complex nested lists and
-  ellipses.
+- **Verification**: Verified `examples/correct syntax/list.lang` which includes complex nested lists
+  and ellipses.
 
 ## [0.3.8] - 2026-01-16
 
 ### Fixed
 
-- **Grammar**: Generalize `Record` fields to allow expressions as keys (e.g., `("key") = value`). This supports
-  dynamic keys or quoted strings as associative keys.
+- **Grammar**: Generalize `Record` fields to allow expressions as keys (e.g., `("key") = value`).
+  This supports dynamic keys or quoted strings as associative keys.
 
 ## [0.3.7] - 2026-01-16
 
 ### Fixed
 
-- **Grammar**: Refactored `Expression` hierarchy to ensure logical operators (`from`, `of`, `for`) bind tighter
-  than list separators (`,`). This fixes issues with lists of binary expressions like `(1 from I, 1 from C)`.
+- **Grammar**: Refactored `Expression` hierarchy to ensure logical operators (`from`, `of`, `for`)
+  bind tighter than list separators (`,`). This fixes issues with lists of binary expressions like
+  `(1 from I, 1 from C)`.
 - **Grammar**: Removed `where` from comparison operators to resolve ambiguity with `where` clauses.
-- **Grammar**: Updated `Record` syntax to support `=` assignment for fields (e.g., `{ a = 5 }`) and comma
-  separators between fields.
+- **Grammar**: Updated `Record` syntax to support `=` assignment for fields (e.g., `{ a = 5 }`) and
+  comma separators between fields.
 
 ## [0.3.6] - 2026-01-16
 
