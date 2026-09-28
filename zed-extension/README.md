@@ -49,9 +49,9 @@ See [examples/](../examples/) for more.
 
 ## Links
 
-- [Main Repository](https://github.com/dmezhnov/lang)
+- [Main Repository](https://github.com/dmezhnov/lang-old)
 - [VS Code Extension](https://marketplace.visualstudio.com/items?itemName=dmezhnov.lang-language)
-- [Report Issues](https://github.com/dmezhnov/lang/issues)
+- [Report Issues](https://github.com/dmezhnov/lang-old/issues)
 
 ## License
 
