@@ -49,7 +49,7 @@ impl LangExtension {
 
         eprintln!("Lang: Local server not found, downloading from GitHub");
         let release = zed::latest_github_release(
-            "dmezhnov/lang",
+            "dmezhnov/lang-old",
             zed::GithubReleaseOptions {
                 require_assets: true,
                 pre_release: false,

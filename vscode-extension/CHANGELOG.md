@@ -1,5 +1,11 @@
 # Changelog
 
+## [0.4.6] - 2026-09-28
+
+### Changed
+
+- **Repository**: The project moved to https://github.com/dmezhnov/lang-old. All links, the extension metadata and the Zed release lookup now point there.
+
 ## [0.4.5] - 2026-01-20
 
 ### Added
