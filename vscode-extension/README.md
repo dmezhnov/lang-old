@@ -74,7 +74,7 @@ Add to your `settings.json`:
 }
 ```
 
-Ensure `lang-language-server` is in your PATH (install via `npm install -g dmezhnov/lang`).
+Ensure `lang-language-server` is in your PATH (install via `npm install -g dmezhnov/lang-old`).
 
 ## Development
 
